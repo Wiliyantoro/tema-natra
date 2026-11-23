@@ -369,8 +369,18 @@
                     let info_pembangunan = '{{ ci_route('pembangunan') }}';
                     let all_persil = JSON.stringify(data.persil)
                     let TAMPIL_LUAS = '{{ setting('tampil_luas_peta') }}';
-                    let PENGATURAN_WILAYAH = '{!! SebutanDesa(setting('default_tampil_peta_wilayah')) ?: [] !!}';
-                    let PENGATURAN_INFRASTRUKTUR = '{!! SebutanDesa(setting('default_tampil_peta_infrastruktur')) ?: [] !!}';
+                    @php
+                        // SebutanDesa() mengembalikan string JSON (nilai setting select-array
+                        // dengan placeholder [desa]/[dusun] sudah diganti sebutan lokal) atau
+                        // array — normalisasi ke array PHP dulu supaya @json menghasilkan
+                        // array JS sungguhan, bukan string 'Array' atau string berisi JSON.
+                        $pengaturanWilayah = SebutanDesa(setting('default_tampil_peta_wilayah'));
+                        $pengaturanWilayah = is_array($pengaturanWilayah) ? $pengaturanWilayah : (json_decode($pengaturanWilayah, true) ?: (empty($pengaturanWilayah) ? [] : [$pengaturanWilayah]));
+                        $pengaturanInfrastruktur = SebutanDesa(setting('default_tampil_peta_infrastruktur'));
+                        $pengaturanInfrastruktur = is_array($pengaturanInfrastruktur) ? $pengaturanInfrastruktur : (json_decode($pengaturanInfrastruktur, true) ?: (empty($pengaturanInfrastruktur) ? [] : [$pengaturanInfrastruktur]));
+                    @endphp
+                    let PENGATURAN_WILAYAH = @json($pengaturanWilayah);
+                    let PENGATURAN_INFRASTRUKTUR = @json($pengaturanInfrastruktur);
                     let WILAYAH_INFRASTRUKTUR = PENGATURAN_WILAYAH.concat(PENGATURAN_INFRASTRUKTUR);
 
                     //OVERLAY WILAYAH DESA
