@@ -166,4 +166,3 @@
 <script src="{{ theme_asset('js/html5shiv.min.js') }}"></script>
 <script src="{{ theme_asset('js/respond.min.js') }}"></script>
 <![endif]-->
-{!! view('admin.layouts.components.token') !!}

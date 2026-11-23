@@ -26,7 +26,7 @@
             </a>
             <form method="get" action="{{ site_url() }}" class="form-inline" style="position: relative; z-index: 10; margin: 12px 0 4px;">
                 <div class="form-group">
-                    <input type="text" name="cari" maxlength="50" class="form-control" value="{{ html_escape($cari) }}" placeholder="Cari Artikel">
+                    <input type="text" name="cari" maxlength="50" class="form-control" value="{{ $cari }}" placeholder="Cari Artikel">
                 </div>
                 <button type="submit" class="btn btn-primary">Cari</button>
             </form>
