@@ -14,12 +14,6 @@
                 @include('theme::layouts.teks_berjalan_marquee')
             </div>
             @include('theme::partials.slider')
-            @if (setting('covid_data'))
-                @include('theme::partials.corona-widget')
-            @endif
-            @if (setting('covid_desa'))
-                @include('theme::partials.corona-local')
-            @endif
             @if ($headline)
                 @include('theme::partials.artikel.list', ['post' => $headline])
             @endif
