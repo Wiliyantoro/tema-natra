@@ -47,4 +47,5 @@
         @endif
 
     </div>
+    @include('theme::partials.pengumuman')
 @endsection
