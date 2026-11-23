@@ -170,6 +170,7 @@
         </div>
 
         @include('theme::partials.artikel.comment')
+        @include('theme::commons.sticky_share')
     @else
         @include('theme::commons.not_found')
     @endif

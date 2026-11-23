@@ -80,7 +80,7 @@
         <!-- Home -->
         <li style="display: inline-block;">
             <a href="{{ site_url('/') }}" style="display: inline-block; padding: 12px 16px;">
-                <i class="fa fa-home"></i>
+                <i class="fa fa-home"></i> Beranda
             </a>
         </li>
 

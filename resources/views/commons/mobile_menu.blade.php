@@ -36,6 +36,11 @@
 
     <!-- Menu utama -->
     <ul id="natra-mobile-menu-utama" style="display: none; list-style: none; margin: 0; padding: 0; border-top: 1px solid #c93a37;">
+        <li style="display: block;">
+            <a href="{{ site_url('/') }}" style="display: flex; width: 100%; align-items: center; padding: 12px;">
+                <i class="fa fa-home" style="margin-right: 8px;"></i> Beranda
+            </a>
+        </li>
         @php $menu_atas = menu_tema() @endphp
         @if ($menu_atas)
             @foreach ($menu_atas as $menu)

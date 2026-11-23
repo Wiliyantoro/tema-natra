@@ -8,23 +8,28 @@
 </head>
 
 <body onLoad="renderDate()">
-    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+    @include('theme::commons.loading_screen')
     <div class="container" style="background-color: #f6f6f6;">
         <header id="header">
-            @include('theme::partials.header')
+            @include('theme::commons.header')
         </header>
-        <div id="navarea">
-            @include('theme::partials.menu_head')
-        </div>
         <div>
             @yield('layout')
         </div>
     </div>
     <footer id="footer">
-        @include('theme::partials.footer_top')
-        @include('theme::partials.footer_bottom')
+        @include('theme::commons.footer')
     </footer>
     @include('theme::commons.meta_footer')
+    <script type="text/javascript">
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
     <script type="text/javascript">
         function formatRupiah(angka, prefix = 'Rp ') {
             if (angka === null || angka === undefined) return (prefix ?? 'Rp ') + '0,00';

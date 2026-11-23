@@ -1,6 +1,6 @@
 @php defined('BASEPATH') || exit('No direct script access allowed'); @endphp
 @php
-    $bg_header = $latar_website;
+    $bg_header = $latar_website ?? '';
 @endphp
 
 <div class="container">
@@ -24,6 +24,12 @@
                     {{ title_case($desa['nama_propinsi']) }}
                 </p>
             </a>
+            <form method="get" action="{{ site_url() }}" class="form-inline" style="position: relative; z-index: 10; margin: 12px 0 4px;">
+                <div class="form-group">
+                    <input type="text" name="cari" maxlength="50" class="form-control" value="{{ html_escape($cari) }}" placeholder="Cari Artikel">
+                </div>
+                <button type="submit" class="btn btn-primary">Cari</button>
+            </form>
             @if ($w_gal)
                 <div style="display: block; width: 83%; margin: 0 auto; overflow: hidden;" class="hidden-xs">
                     <div class="marquee-track-natra" style="display: flex; gap: 12px; padding-top: 8px;">
