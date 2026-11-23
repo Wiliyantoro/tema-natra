@@ -91,7 +91,7 @@
                 <li style="display: inline-block; position: relative;">
                     <a href="{{ $has_dropdown ? '#!' : $menu['link_url'] }}"
                        style="padding: 12px; display: inline-block;">
-                        {!! $menu['nama'] !!}
+                        {{ $menu['nama'] }}
                         @if ($has_dropdown)
                             <i class="fa fa-chevron-down" style="font-size: 12px; margin-left: 4px;"></i>
                         @endif
@@ -105,7 +105,7 @@
                                 <li style="position: relative;">
                                     <a href="{{ $child_has_dropdown ? '#!' : $child['link_url'] }}"
                                        style="display: flex; align-items: center; justify-content: space-between; padding: 12px 20px;">
-                                        <span style="flex: 1;">{!! $child['nama'] !!}</span>
+                                        <span style="flex: 1;">{{ $child['nama'] }}</span>
                                         @if ($child_has_dropdown)
                                             <i class="fa fa-chevron-right" style="font-size: 12px; margin-left: 8px; margin-right: 20px;"></i>
                                         @endif
@@ -119,7 +119,7 @@
                                                 <li style="position: relative;">
                                                     <a href="{{ $grandchild_has_dropdown ? '#!' : $grandchild['link_url'] }}"
                                                        style="display: flex; align-items: center; justify-content: space-between; padding: 12px 20px;">
-                                                        <span style="flex: 1;">{!! $grandchild['nama'] !!}</span>
+                                                        <span style="flex: 1;">{{ $grandchild['nama'] }}</span>
                                                         @if ($grandchild_has_dropdown)
                                                             <i class="fa fa-chevron-right" style="font-size: 12px; margin-left: 8px; margin-right: 20px;"></i>
                                                         @endif
@@ -132,7 +132,7 @@
                                                                 <li>
                                                                     <a href="{{ $greatgrandchild['link_url'] }}"
                                                                        style="display: block; padding: 12px 20px;">
-                                                                        {!! $greatgrandchild['nama'] !!}
+                                                                        {{ $greatgrandchild['nama'] }}
                                                                     </a>
                                                                 </li>
                                                             @endforeach

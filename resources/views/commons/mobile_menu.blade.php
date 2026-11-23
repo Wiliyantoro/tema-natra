@@ -52,7 +52,7 @@
                     <a href="{{ $menu_link }}"
                         class="{{ $has_dropdown ? 'mm-toggle' : '' }}"
                         style="display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 12px;">
-                        <span style="flex: 1;">{!! $menu['nama'] !!}</span>
+                        <span style="flex: 1;">{{ $menu['nama'] }}</span>
                         @if ($has_dropdown)
                             <i class="fa fa-chevron-down" style="font-size: 12px; margin-left: 8px;"></i>
                         @endif
@@ -69,7 +69,7 @@
                                     <a href="{{ $menu_link2 }}"
                                         class="{{ $has_dropdown2 ? 'mm-toggle' : '' }}"
                                         style="display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 12px 16px 12px 24px;">
-                                        {!! $childrens['nama'] !!}
+                                        {{ $childrens['nama'] }}
                                         @if ($has_dropdown2)
                                             <i class="fa fa-chevron-right" style="font-size: 12px; margin-left: auto;"></i>
                                         @endif
@@ -85,7 +85,7 @@
                                                     <a href="{{ $menu_link3 }}"
                                                         class="{{ $has_dropdown3 ? 'mm-toggle' : '' }}"
                                                         style="display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 12px 16px 12px 24px;">
-                                                        {!! $children['nama'] !!}
+                                                        {{ $children['nama'] }}
                                                         @if ($has_dropdown3)
                                                             <i class="fa fa-chevron-right" style="font-size: 12px; margin-left: auto;"></i>
                                                         @endif
@@ -99,7 +99,7 @@
                                                                 <li>
                                                                     <a href="{{ $menu_link4 }}"
                                                                         style="display: block; padding: 12px 16px 12px 24px;">
-                                                                        {!! $ggchild['nama'] !!}
+                                                                        {{ $ggchild['nama'] }}
                                                                     </a>
                                                                 </li>
                                                             @endforeach
